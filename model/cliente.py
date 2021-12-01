@@ -1,5 +1,5 @@
 # Descrição: Classe Cliente
-# Contém os atributos do cliente
+# Contém os atributos (dados) do cliente
 
 class Cliente():
     def __init__(self, id, nome, endereco, telefone):

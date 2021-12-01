@@ -4,25 +4,27 @@
 #lista que irá armazenar todos os clientes do sistema
 lista_clientes = []
 
-# adcionar novo cliente
+# Adcionar novo cliente
 def adicionar(novo_cliente):
     lista_clientes.append(novo_cliente)
 
-# editar cliente
-def editar():
+# Editar cliente - Dado um objeto cliente, buscar na 
+#lista através do seu ID e atualizá-lo
+def editar(cliente):
     pass
     
-# excluir cliente
-def excuir():
+# Excluir cliente - Dado o ID do cliente, removê-lo da lista
+def excuir(id_cliente):
     pass
 
-# listar todos os cliente
+# Listar todos os cliente
 def listar_todos():
     # passa por todos os clientes da lista e 
     # chama a função imprime() desses objetos
     for cliente in lista_clientes:
         cliente.imprime()
 
-# pegar um cliente específico
-def lista_cliente():
+# Listar um cliente específico
+# Dado o ID do cliente, imprimir seus dados
+def lista_cliente(id):
     pass
