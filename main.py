@@ -1,48 +1,18 @@
-# classe principal
-# import - importa funções, variáveis, classes de outros arquivos
+# importar as libs do PyQt
+from PyQt5.QtWidgets import QApplication, QPushButton
+import sys
 
-# de /model/cliente.py importe Cliente (é uma classe)
-from model.cliente import Cliente
+def click():
+    print("olá, o botão foi pressionado...")
 
-# carrega o arquivo do diretório /model/cliente_dao.py
-# e define um apelido chamado funcoes_clientes para prover 
-# acesso as funções definidas no arquivo importado
-import model.cliente_dao as funcoes_clientes
+# cria a aplicação
+app = QApplication(sys.argv)
 
-# ADCIONAR CLIENTES
-for i in range(0, 15):
-    novo_cliente = Cliente(i, f'Cliente-{i}', 'rua a', '75 9 8888888')
-    # CHAMADA DA FUNÇÃO DE ADICIONAR UM CLIENTE EM CLIENTE_DAO.PY
-    funcoes_clientes.adicionar(novo_cliente)
+# definir os widgets que aparecerão na tela
+window = QPushButton("Click aqui!")
+#colocar um evendo no botão
+window.clicked.connect(click)
+window.show() # carregar o elemento para a tela
 
-# EXCLUI CLIENTE
-
-funcoes_clientes.excuir(0)
-funcoes_clientes.excuir(10)
-funcoes_clientes.excuir(5)
-funcoes_clientes.excuir(7)
-funcoes_clientes.excuir(11)
-funcoes_clientes.excuir(14)
-funcoes_clientes.excuir(13)
-funcoes_clientes.excuir(12)
-
-# EDIÇÃO DE UM CLIENTE
-
-# 1 - Qual o ID do cliente que desejo editar?
-id_cliente = 4
-
-# 2 - Pegar todas as informações do cliente com ID = 4 
-# (Pegar o objeto cliente na lista de clientes que possui o ID 4)
-
-cliente_edit = funcoes_clientes.pegarCliente(id_cliente) # retorna o objeto cliente com id = 4
-
-# 3 - Fazer a edição dos campos localmente
-cliente_edit.nome = 'Kauãn Nascimento'
-cliente_edit.endereco = 'Rua Alguma coisa, n 789'
-cliente_edit.telefone = '75 9 7894-2310'
-
-# 4 - salvar o elemento na lista
-funcoes_clientes.editar(cliente_edit)
-
-# imprimir todos os clientes
-funcoes_clientes.listar_todos()
+#executar o aplicativo
+app.exec()
