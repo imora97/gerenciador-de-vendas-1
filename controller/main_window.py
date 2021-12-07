@@ -6,18 +6,20 @@ from controller.resumo import ResumoPage
 
 
 FILE_UI = 'view/main_window.ui'
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi(FILE_UI, self)
 
-        #criar os objetos referente as páginas
+        # criar os objetos referente as páginas
         self.resumo_page = ResumoPage()
         self.clientes_page = ClientesPage()
         self.peca_page = PecaPage()
 
         # Adicionar as páginas ao painel_principal
-        self.painel_principal.insertWidget(0,self.resumo_page) # pág 0
+        self.painel_principal.insertWidget(0, self.resumo_page)  # pág 0
         self.painel_principal.insertWidget(1, self.clientes_page)
         self.painel_principal.insertWidget(2, self.peca_page)
 

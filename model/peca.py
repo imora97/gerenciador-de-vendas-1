@@ -6,3 +6,5 @@ class Peca():
         self.nome = nome
         self.valor = valor
         self.validade = validade
+
+        
