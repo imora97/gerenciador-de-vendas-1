@@ -4,7 +4,7 @@
 class Cliente():
     def __init__(self, id, nome, endereco, telefone):
         #atributos da classe
-        self.id = id
+        self.id = id # identificador - único! (ex. CPF)
         self.nome = nome
         self.endereco = endereco
         self.telefone = telefone
