@@ -22,6 +22,6 @@ carrega_dados()
 # definir os widgets que aparecerão na tela
 window = MainWindow()
 window.show() # carregar o elemento para a tela
-
+app.setStyle('Fusion')
 #executar o aplicativo
 app.exec()
