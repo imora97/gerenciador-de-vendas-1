@@ -31,6 +31,9 @@
         <property name="text">
          <string>Sistema de Vendas</string>
         </property>
+        <property name="margin">
+         <number>5</number>
+        </property>
        </widget>
       </item>
       <item>
@@ -74,6 +77,20 @@
           <property name="icon">
            <iconset>
             <normaloff>../icons/pecas.png</normaloff>../icons/pecas.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="venda_btn">
+          <property name="text">
+           <string>Venda</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Todas as vendas</string>
           </property>
          </widget>
         </item>

@@ -14,8 +14,6 @@ def carrega_dados():
         funcoes_clientes.adicionar(novo_cliente)
     # add peças
 
-
-
 # cria a aplicação
 app = QApplication(sys.argv)
 carrega_dados()
