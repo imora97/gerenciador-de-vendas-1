@@ -14,6 +14,8 @@ class CadVenda(QWidget):
         self.lista_clientes = None
         self.lista_pecas = None
 
+        self.lista_itens = None
+
         # cliente atual
         self.cliente_atual = None
         self.peca_atual = None
@@ -21,8 +23,28 @@ class CadVenda(QWidget):
         # evento do botão finalizar
         self.finalizar_btn.clicked.connect(self.finalizar_venda)
 
+        # adicionar peça
+        self.add_peca_btn.clicked.connect(self.add_item_lista)
+
         self.carrega_clientes()
         self.carrega_pecas()
+
+    def add_item_lista(self):
+        if self.quantidade.text() == '' or self.valor_unitario.text() == '':
+            print('Insira os dados obrigatórios')
+        else:
+            item = {'quantidade': self.quantidade.text(),
+                    'peca': self.peca_atual}
+            self.lista_itens.append(item)
+
+            self.atualiza_dados_venda()
+    
+    # atualizar os dados da venda (Qtd de itens e Total )
+    def atualiza_dados_venda(self):
+        #atualiza a quantidade de itens
+
+        #atualiza o total pago
+
 
     def carrega_clientes(self):
         # lista de clientes
@@ -35,13 +57,12 @@ class CadVenda(QWidget):
         # evento que pega o INDEX do cliente selecionado
         self.clientes_comboBox.currentIndexChanged.connect(self.pega_cliente)
 
-    
     def carrega_pecas(self):
         # lista de peças
         self.lista_pecas = peca_dao.lista_pecas
         for p in self.lista_pecas:
             self.pecas_listWidget.addItem(p.nome)
-        
+
         self.pecas_listWidget.currentRowChanged.connect(self.pega_peca)
 
     def pega_peca(self, index):

@@ -9,6 +9,8 @@ import model.peca_dao as peda_dao
 from model.cliente import Cliente
 from model.peca import Peca
 
+os.environ['XDG_SESSION_TYPE'] = 'Wayland' # APENAS PARA O LINUX
+
 def carrega_dados():
     # ADCIONAR CLIENTES
     for i in range(0, 15):
