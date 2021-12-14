@@ -33,8 +33,10 @@ class CadVenda(QWidget):
         if self.quantidade.text() == '' or self.valor_unitario.text() == '':
             print('Insira os dados obrigatórios')
         else:
+            #cria um novo item
             item = {'quantidade': self.quantidade.text(),
                     'peca': self.peca_atual}
+            # adicionar na lista de itens
             self.lista_itens.append(item)
 
             self.atualiza_dados_venda()
@@ -42,8 +44,11 @@ class CadVenda(QWidget):
     # atualizar os dados da venda (Qtd de itens e Total )
     def atualiza_dados_venda(self):
         #atualiza a quantidade de itens
+        # mostra o tamanho da lista de itens
 
         #atualiza o total pago
+        # varrer a lista de itens e somar todos os valores da multiplicação entre a 
+        # quandidade de itens x o valor da peça
 
 
     def carrega_clientes(self):
