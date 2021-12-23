@@ -43,6 +43,7 @@ class CadVenda(QWidget):
     
     # atualizar os dados da venda (Qtd de itens e Total )
     def atualiza_dados_venda(self):
+        pass
         #atualiza a quantidade de itens
         # mostra o tamanho da lista de itens
 
